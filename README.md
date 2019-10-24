@@ -10,13 +10,13 @@ Once installed you can run `apic-cli -h` to view all available commands.
 
 **Command:**
 
-`run|r [options] \<suit\>`  Run apic Test Suit or an entire Test Project
+`run|r <suit> [options]`  Run apic Test Suit or an entire Test Project
 
 **Options**
 
-`-e, --environment \<path\>`  :   Specify a URL or Path to an apic environment file.
+`-e, --environment <path>`  :   Specify a URL or Path to an apic environment file.
 
-`-r, --reporters \<reporters\>` :  Comma separated list of reporters to use (without any space)
+`-r, --reporters <reporters>` :  Comma separated list of reporters to use (without any space)
 
 `-d , --responseData`  :  if specified, response data will be logged in the cli reporter
 
