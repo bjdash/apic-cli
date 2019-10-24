@@ -7,13 +7,20 @@ if you   want to use apic from the command line run
     npm install apic-cli -g
 
 Once installed you can run `apic-cli -h` to view all available commands.
+
 **Command:**
+
 `run|r [options] \<suit\>`  Run apic Test Suit or an entire Test Project
+
 **Options**
+
 `-e, --environment \<path\>`  :   Specify a URL or Path to an apic environment file.
-  `-r, --reporters \<reporters\>` :  Comma separated list of reporters to use (without any space)
-  `-d , --responseData`  :  if specified, response data will be logged in the cli reporter
-  `-h, --help`  : output usage information
+
+`-r, --reporters \<reporters\>` :  Comma separated list of reporters to use (without any space)
+
+`-d , --responseData`  :  if specified, response data will be logged in the cli reporter
+
+`-h, --help`  : output usage information
 
 Example: `apic-cli run ".\example\ToDo demo.suit.apic" -e ".\example\APIC Todo demo-env.env.apic" -r cli,junit -d`
 
