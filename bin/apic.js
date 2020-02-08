@@ -7,6 +7,7 @@ const program = new commander.Command();
 program.version('0.0.1');
 
 //ex: apic-cli run ".\example\ToDo demo.suit.apic" -e ".\example\APIC Todo demo-env.env.apic" -r cli,junit
+//ex: apic-cli run ".\example\ToDo demo-with-env.suit.apic" -r cli,junit
 program
     .command('run <suit>')
     .alias('r')
@@ -14,6 +15,7 @@ program
     .usage('<suit> [options]')
     .option('-e, --environment <path>', 'Specify a URL or Path to an apic environment file.')
     .option('-r, --reporters <reporters>', 'Comma separated list of reporters to use (without any space)')
+    .option('--reporters-junit-path <path>', 'Path to write the junit report file')
     .option('-d , --responseData', 'if specified, response data will be logged in the cli reporter')
     .action((suit, command) => {
         apic.run(suit, getRunOptions(command));
@@ -25,6 +27,7 @@ program.on('--help', function () {
     console.info('  apic [command] -h');
 });
 
+// Warn on invalid command and then exits.
 program.on('command:*', (command) => {
     console.error(`error:  \`${command}\` is an invalid command \n`);
     program.help();

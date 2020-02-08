@@ -15,7 +15,7 @@
     "apic-cli",
     "api-testing"
   ],
-  "author": "Your Name <bijaya.k.dash@gmail.com> (https://apic.app)",
+  "author": "Bijaya Dash <bijaya.k.dash@gmail.com> (https://apic.app)",
   "license": "ISC",
   "repository": {
     "type": "git",
@@ -36,7 +36,8 @@
     "inquirer": "^7.0.0",
     "ora": "^3.4.0",
     "reckonjs": "^0.1.2",
-    "vm2": "^3.8.4"
+    "vm2": "^3.8.4",
+    "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
     "eslint": "^6.4.0",

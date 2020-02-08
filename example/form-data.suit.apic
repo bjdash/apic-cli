@@ -1,0 +1,65 @@
+{
+    "TYPE": "APICSuit",
+    "value": {
+        "name": "form-data",
+        "projId": "1571444390621-84cc6e6dff07",
+        "_id": "1571446047148-48b6c72273a3",
+        "_created": 1571446047148,
+        "_modified": 1571446047148,
+        "reqs": [
+            {
+                "_id": "1571445928315-d35d8bd685f4f",
+                "_time": 1571445928315,
+                "_modified": 1571445928315,
+                "url": "https://postman-echo.com/post",
+                "name": "form-data",
+                "description": "",
+                "method": "POST",
+                "Req": {
+                    "url_params": [
+                        {
+                            "key": "",
+                            "val": ""
+                        }
+                    ],
+                    "headers": [
+                        {
+                            "key": "asdf",
+                            "val": "asdf"
+                        },
+                        {
+                            "key": "",
+                            "val": ""
+                        }
+                    ]
+                },
+                "prescript": "",
+                "postscript": "\nTESTS[' $response.data.form.asdf should be equal to $request.body.asdf'] =  $response.data.form.asdf == $request.body.asdf;\n\nTESTS[' $response.data.headers.asdf should be equal to $request.headers.asdf'] =  $response.data.headers.asdf == $request.headers.asdf;\n",
+                "respCodes": [],
+                "Body": {
+                    "type": "form-data",
+                    "formData": [
+                        {
+                            "key": "file",
+                            "val": "./example/TEST.txt",
+                            "type": "File",
+                            "file": {}
+                        },
+                        {
+                            "key": "asdf",
+                            "val": "asdf",
+                            "type": "Text"
+                        },
+                        {
+                            "key": "",
+                            "val": "",
+                            "type": "Text"
+                        }
+                    ]
+                },
+                "_parent": "1571444357477-a8cffd3f536b"
+            }
+        ],
+        "expanded": "opened"
+    }
+}
