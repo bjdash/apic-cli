@@ -1,5 +1,5 @@
 {
-    "TYPE": "APICSuit",
+    "TYPE": "APICSuite",
     "value": {
         "_id": "1571822749873-cae2f17baca3-demo",
         "name": "ToDo demo",

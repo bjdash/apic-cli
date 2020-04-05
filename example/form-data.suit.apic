@@ -1,5 +1,5 @@
 {
-    "TYPE": "APICSuit",
+    "TYPE": "APICSuite",
     "value": {
         "name": "form-data",
         "projId": "1571444390621-84cc6e6dff07",
