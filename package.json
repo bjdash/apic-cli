@@ -27,7 +27,7 @@
   "homepage": "https://apic.app",
   "dependencies": {
     "ajv": "^6.10.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "chai": "^4.2.0",
     "cli-table3": "^0.5.1",
     "colors": "^1.3.3",
