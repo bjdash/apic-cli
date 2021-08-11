@@ -1,14 +1,18 @@
 {
-  "name": "apic-cli",
+  "name": "apic-cli2",
   "version": "1.0.4",
   "description": "A command line interface to run your apic tests",
   "main": "index.js",
   "bin": {
-    "apic": "bin/apic.js",
-    "apic-cli": "bin/apic.js"
+    "apic2": "dist/apic-cli.js",
+    "apic-cli2": "dist/apic-cli.js"
   },
   "scripts": {
-    "lint": "eslint lib/ --fix"
+    "dev": "ts-node ./src/apic-cli.ts",
+    "clean": "rimraf ./dist/",
+    "build": "npm run clean && tsc",
+    "test": "npm run build && ava --verbose",
+    "bundle": "npm run build && pkg . --out-dir ./exec/"
   },
   "keywords": [
     "apic",
@@ -26,25 +30,25 @@
   },
   "homepage": "https://apic.app",
   "dependencies": {
-    "ajv": "^6.10.2",
+    "ajv": "^8.6.2",
     "axios": "^0.21.1",
-    "chai": "^4.2.0",
-    "cli-table3": "^0.5.1",
-    "colors": "^1.3.3",
-    "commander": "^3.0.1",
-    "form-data": "^2.5.1",
-    "inquirer": "^7.0.0",
-    "ora": "^3.4.0",
+    "chai": "^4.3.4",
+    "cli-table3": "^0.6.0",
+    "colors": "^1.4.0",
+    "commander": "^8.1.0",
+    "expression-eval": "^5.0.0",
+    "form-data": "^4.0.0",
+    "ora": "^5.4.1",
     "reckonjs": "^0.1.2",
-    "vm2": "^3.8.4",
-    "xmlbuilder": "^13.0.2"
+    "socket.io": "^4.1.3",
+    "typescript": "^4.3.5",
+    "vm2": "^3.9.3",
+    "xmlbuilder": "^15.1.1"
   },
   "devDependencies": {
-    "eslint": "^6.4.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "@types/commander": "^2.12.2",
+    "@types/node": "^16.4.13",
+    "@types/ora": "^3.2.0",
+    "rimraf": "^3.0.2"
   }
 }
