@@ -1,11 +1,11 @@
 {
-  "name": "apic-cli2",
+  "name": "apic-cli",
   "version": "1.0.4",
   "description": "A command line interface to run your apic tests",
   "main": "index.js",
   "bin": {
-    "apic2": "dist/apic-cli.js",
-    "apic-cli2": "dist/apic-cli.js"
+    "apic": "dist/apic-cli.js",
+    "apic-cli": "dist/apic-cli.js"
   },
   "scripts": {
     "dev": "ts-node ./src/apic-cli.ts",
