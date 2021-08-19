@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "rootDir": "./src",
+        "outDir": "dist",
+        "module": "commonjs",
+        "target": "es6",
+        "esModuleInterop": true,
+        "allowJs": true,
+        "declaration": true
+    },
+    "exclude": [
+        "example",
+        "apic-reports"
+    ]
+}
