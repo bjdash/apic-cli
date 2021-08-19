@@ -11,7 +11,7 @@ Once installed you can run `apic-cli -h` to view all available commands.
 
 **Command:**
 
-`run|r <suit> [options]`  Run apic Test Suit or an entire Test Project
+`apic run|r <suit> [options]`  Run apic Test Suit or an entire Test Project
 
 **Options**
 
@@ -23,7 +23,7 @@ Once installed you can run `apic-cli -h` to view all available commands.
 
 `-h, --help`  : output usage information
 
-Example: `apic-cli run ".\example\ToDo demo.suit.apic" -e ".\example\APIC Todo demo-env.env.apic" -r cli,junit -d`
+Example: `apic run ".\example\ToDo demo.suit.apic" -e ".\example\APIC Todo demo-env.env.apic" -r cli,junit -d`
 
 ### With node js
 If you want to use it with a node js application add it to your project by running
@@ -48,7 +48,7 @@ To Learn more about the APIC Web Agent visit [https://docs.apic.app/apic-web-age
 
 **Command:**
 
-`agent [options]`  Start the APIC Web Agent
+`apic agent [options]`  Start the APIC Web Agent
 
 **Options**
 
