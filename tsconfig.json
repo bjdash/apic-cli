@@ -5,7 +5,8 @@
         "module": "commonjs",
         "target": "es6",
         "esModuleInterop": true,
-        "allowJs": true
+        "allowJs": true,
+        "declaration": true
     },
     "exclude": [
         "example",

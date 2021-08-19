@@ -2,7 +2,8 @@
   "name": "apic-cli",
   "version": "1.0.4",
   "description": "A command line interface to run your apic tests",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "bin": {
     "apic": "dist/apic-cli.js",
     "apic-cli": "dist/apic-cli.js"
@@ -12,7 +13,7 @@
     "clean": "rimraf ./dist/",
     "build": "npm run clean && tsc",
     "test": "npm run build && ava --verbose",
-    "bundle": "npm run build && pkg . --out-dir ./exec/"
+    "prepublish": "tsc"
   },
   "keywords": [
     "apic",
