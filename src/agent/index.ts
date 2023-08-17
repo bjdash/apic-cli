@@ -1,6 +1,6 @@
 import { createServer } from "http";
 import { Server, Socket } from "socket.io";
-import { AgentOptions } from "../constants";
+import { DefaultAgentOptions } from "../constants";
 import { AgentRunOption } from "../models/AgentRunOptions.model";
 import { bgGreen, bgRed, white } from "colors/safe";
 import { AgentEvents } from "./events";
@@ -12,8 +12,8 @@ import { ReporterInitiator } from "../runner/ReporterInitiator";
 import { RunResult } from "../models/RunResult.model";
 
 export class Agent {
-    constructor(private options: AgentRunOption) {
-        if (!options.port) options.port = AgentOptions.port;
+    constructor(private agentOptions: AgentRunOption) {
+        if (!agentOptions.port) agentOptions.port = DefaultAgentOptions.port;
     }
 
     start() {
@@ -35,18 +35,18 @@ export class Agent {
                 const interpolator = new InterpolationService(arg.envs.saved, arg.envs.inMem);
                 const testRunner = new TestRunner(interpolator);
                 const reporter = new ReporterInitiator({ reporters: 'cli', responseData: true });
-                const reqRunner = new RequestRunner(testRunner, interpolator, reporter);
+                const reqRunner = new RequestRunner(testRunner, interpolator, reporter, this.agentOptions.proxy);
                 let result: RunResult = await reqRunner.run(arg.request);
                 socket.emit(AgentEvents.RUN_REQUEST_DONE, result)
             });
         });
 
-        httpServer.listen(this.options.port, () => {
-            console.log(bgGreen(`Apic agent started on port ${this.options.port}`));
+        httpServer.listen(this.agentOptions.port, () => {
+            console.log(bgGreen(`Apic agent started on port ${this.agentOptions.port}`));
             console.log('To know more on how to use apic agent visit https://docs.apic.app/apic-web-agent-apic-cli');
 
         }).on('error', (err) => {
-            console.log(bgRed(`Apic agent failed to start on port ${this.options.port}`));
+            console.log(bgRed(`Apic agent failed to start on port ${this.agentOptions.port}`));
             console.log(err)
         });
     }

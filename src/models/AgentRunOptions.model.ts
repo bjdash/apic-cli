@@ -1,3 +1,4 @@
 export interface AgentRunOption {
-    port: number | string
+    port: number | string,
+    proxy?: string
 }

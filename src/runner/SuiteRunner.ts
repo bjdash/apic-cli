@@ -45,7 +45,7 @@ export class Runner {
         }
         this.interpolator = new InterpolationService(this.scope, {});
         this.testRunner = new TestRunner(this.interpolator);
-        this.reqRunner = new RequestRunner(this.testRunner, this.interpolator, this.reporter);
+        this.reqRunner = new RequestRunner(this.testRunner, this.interpolator, this.reporter, this.runOptions.proxy);
     }
 
     async run() {

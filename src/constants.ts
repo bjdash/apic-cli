@@ -13,6 +13,6 @@ export const DefaultRunOptions: RunOption = {
 
 export const METHOD_WITH_BODY = ['POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'];
 
-export const AgentOptions = {
+export const DefaultAgentOptions = {
     port: 8008
 }

@@ -1,6 +1,6 @@
 {
   "name": "apic-cli",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A command line interface to run your apic tests",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,6 +39,7 @@
     "commander": "^8.1.0",
     "expression-eval": "^5.0.0",
     "form-data": "^4.0.0",
+    "https-proxy-agent": "^7.0.1",
     "ora": "^5.4.1",
     "reckonjs": "^0.1.2",
     "socket.io": "^4.1.3",

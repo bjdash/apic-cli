@@ -1,7 +1,7 @@
 import { AgentRunOption } from "./models/AgentRunOptions.model";
 import { Runner } from "./runner/SuiteRunner";
 import { Agent } from './agent'
-import { AgentOptions } from "./constants";
+import { DefaultAgentOptions } from "./constants";
 
 export async function runSuite(suitPath, options) {
     const runner = new Runner(suitPath, options);
@@ -10,8 +10,8 @@ export async function runSuite(suitPath, options) {
 }
 
 export function startAgent(options: AgentRunOption) {
-    if (!options) options = AgentOptions;
-    if (!options.port) options.port = AgentOptions.port;
+    if (!options) options = DefaultAgentOptions;
+    if (!options.port) options.port = DefaultAgentOptions.port;
     const agent = new Agent(options);
     agent.start();
 }

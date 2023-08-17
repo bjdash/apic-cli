@@ -12,6 +12,7 @@ import { Utils } from "../utils";
 import axios, { AxiosResponse } from 'axios';
 import { ReporterInitiator } from "./ReporterInitiator";
 import { RunEvents } from "./RunEvents";
+import { HttpsProxyAgent } from "https-proxy-agent";
 
 export class RequestRunner {
     private _xhr: XMLHttpRequest;
@@ -20,9 +21,10 @@ export class RequestRunner {
     constructor(
         private tester: TestRunner,
         private interpolationService: InterpolationService,
-        private reporter: ReporterInitiator
+        private reporter: ReporterInitiator,
+        private httpProxy: string
     ) {
-        // this.onreadystatechange = this.onreadystatechange.bind(this)
+        process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'
     }
 
     run(req: ApiRequest): Promise<RunResult> {
@@ -58,7 +60,10 @@ export class RequestRunner {
             }
 
             this.sentTime = Date.now();
-            axios(axiosReq).then(res => {
+            axios({
+                ...axiosReq,
+                ...(this.httpProxy && {proxy:false, httpsAgent: new HttpsProxyAgent(this.httpProxy, {rejectUnauthorized:false})})
+            }).then(res => {
                 // console.log('res----', res)
                 result.$response = this.finishRun($request, preRunResponse, res);
                 this.reporter.emit(RunEvents.REQ_RUN_END, result);

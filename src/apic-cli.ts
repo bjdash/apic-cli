@@ -16,14 +16,16 @@ program
     .option('-r, --reporters <reporters>', 'Comma separated list of reporters to use (without any space)')
     .option('--reporters-junit-path <path>', 'Path to write the junit report file')
     .option('-d , --responseData', 'if specified, response data will be logged in the cli reporter')
+    .option('-x , --proxy <proxy URL>', 'Proxy URL Eg: http://username:password@hostname:port')
     .action((suite, command) => {
         runSuite(suite, getRunOptions(command));
     });
-
-program.command('agent')
+    
+    program.command('agent')
     .description('Start apic agent to make api requests while using apic with browser to avoid cross-origin resource sharing (CORS) limitation.')
     .usage(' [options]')
     .option('-p, --port <port>', 'Specify the port to start thge agent. Default:8008')
+    .option('-x , --proxy <proxy URL>', 'Proxy URL Eg: http://username:password@hostname:port')
     .action((command) => {
         startAgent(command)
     });
