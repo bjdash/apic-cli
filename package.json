@@ -1,6 +1,6 @@
 {
   "name": "apic-cli",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A command line interface to run your apic tests",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
