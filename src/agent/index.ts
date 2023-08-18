@@ -31,7 +31,6 @@ export class Agent {
 
         io.on("connection", (socket: Socket) => {
             socket.on(AgentEvents.RUN_REQUEST, async (arg: AgentRunRequest) => {
-                // console.log(arg); // world
                 const interpolator = new InterpolationService(arg.envs.saved, arg.envs.inMem);
                 const testRunner = new TestRunner(interpolator);
                 const reporter = new ReporterInitiator({ reporters: 'cli', responseData: true });

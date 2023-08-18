@@ -126,7 +126,7 @@ export class RequestRunner {
             data: null,
             logs: preRunResponse?.logs || [],
             tests: preRunResponse?.tests || [],
-            inMemEnvs: preRunResponse?.inMem || {},
+            inMemEnvs: {...this.interpolationService.inMem, ...(preRunResponse?.inMem || {})},
             scriptError: preRunResponse?.scriptError || null
         };
         $response.respSize = this.getResponseSize($response)
